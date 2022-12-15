@@ -1,0 +1,111 @@
+
+wandb: WARNING The save_model argument by default saves the model in the HDF5 format that cannot save custom objects like subclassed models and custom layers. This behavior will be deprecated in a future release in favor of the SavedModel format. Meanwhile, the HDF5 model is saved as W&B files and the SavedModel as W&B Artifacts.
+Model: "handwritting_rec_model"
+__________________________________________________________________________________________________
+ Layer (type)                   Output Shape         Param #     Connected to
+==================================================================================================
+ image (InputLayer)             [(None, 128, 32, 1)  0           []
+                                ]
+ conv_layer0 (Conv2D)           (None, 128, 32, 64)  1664        ['image[0][0]']
+ batch_normalization (BatchNorm  (None, 128, 32, 64)  256        ['conv_layer0[0][0]']
+ alization)
+ max_pooling2d (MaxPooling2D)   (None, 64, 16, 64)   0           ['batch_normalization[0][0]']
+ conv_layer1 (Conv2D)           (None, 64, 16, 64)   102464      ['max_pooling2d[0][0]']
+ batch_normalization_1 (BatchNo  (None, 64, 16, 64)  256         ['conv_layer1[0][0]']
+ rmalization)
+ max_pooling2d_1 (MaxPooling2D)  (None, 32, 8, 64)   0           ['batch_normalization_1[0][0]']
+ conv_layer2 (Conv2D)           (None, 32, 8, 64)    36928       ['max_pooling2d_1[0][0]']
+ batch_normalization_2 (BatchNo  (None, 32, 8, 64)   256         ['conv_layer2[0][0]']
+ rmalization)
+ max_pooling2d_2 (MaxPooling2D)  (None, 16, 4, 64)   0           ['batch_normalization_2[0][0]']
+ conv_layer3 (Conv2D)           (None, 16, 4, 64)    36928       ['max_pooling2d_2[0][0]']
+ batch_normalization_3 (BatchNo  (None, 16, 4, 64)   256         ['conv_layer3[0][0]']
+ rmalization)
+ max_pooling2d_3 (MaxPooling2D)  (None, 8, 2, 64)    0           ['batch_normalization_3[0][0]']
+ conv_layer4 (Conv2D)           (None, 8, 2, 64)     36928       ['max_pooling2d_3[0][0]']
+ batch_normalization_4 (BatchNo  (None, 8, 2, 64)    256         ['conv_layer4[0][0]']
+ rmalization)
+ max_pooling2d_4 (MaxPooling2D)  (None, 4, 1, 64)    0           ['batch_normalization_4[0][0]']
+ reshape (Reshape)              (None, 32, 8)        0           ['max_pooling2d_4[0][0]']
+ dense1 (Dense)                 (None, 32, 64)       576         ['reshape[0][0]']
+ dropout (Dropout)              (None, 32, 64)       0           ['dense1[0][0]']
+ Bidirectional_layer0 (Bidirect  (None, 32, 256)     197632      ['dropout[0][0]']
+ ional)
+ Bidirectional_layer1 (Bidirect  (None, 32, 128)     164352      ['Bidirectional_layer0[0][0]']
+ ional)
+ Bidirectional_layer2 (Bidirect  (None, 32, 64)      41216       ['Bidirectional_layer1[0][0]']
+ ional)
+ label (InputLayer)             [(None, None)]       0           []
+ dense2 (Dense)                 (None, 32, 81)       5265        ['Bidirectional_layer2[0][0]']
+ ctc_loss (CTCLayer)            (None, 32, 81)       0           ['label[0][0]',
+                                                                  'dense2[0][0]']
+==================================================================================================
+Total params: 625,233
+Trainable params: 624,593
+Non-trainable params: 640
+__________________________________________________________________________________________________
+Epoch 1/100
+Traceback (most recent call last):
+  File "D:\Documents\perso\ML\pythonProject\model_training.py", line 14, in <module>
+    Model(model_input_shape, myDataLoader).train_model(100)
+  File "D:\Documents\perso\ML\pythonProject\Model.py", line 138, in train_model
+    history = model.fit(
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\wandb\integration\keras\keras.py", line 174, in new_v2
+    return old_v2(*args, **kwargs)
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\wandb\integration\keras\keras.py", line 174, in new_v2
+    return old_v2(*args, **kwargs)
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\wandb\integration\keras\keras.py", line 174, in new_v2
+    return old_v2(*args, **kwargs)
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\keras\utils\traceback_utils.py", line 70, in error_handler
+    raise e.with_traceback(filtered_tb) from None
+  File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\tensorflow\python\eager\execute.py", line 54, in quick_execute
+    tensors = pywrap_tfe.TFE_Py_Execute(ctx._handle, device_name, op_name,
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Graph execution error:
+Detected at node 'handwritting_rec_model/reshape/Reshape' defined at (most recent call last):
+    File "D:\Documents\perso\ML\pythonProject\model_training.py", line 14, in <module>
+      Model(model_input_shape, myDataLoader).train_model(100)
+    File "D:\Documents\perso\ML\pythonProject\Model.py", line 138, in train_model
+      history = model.fit(
+    File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\wandb\integration\keras\keras.py", line 174, in new_v2
+      return old_v2(*args, **kwargs)
+    File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\wandb\integration\keras\keras.py", line 174, in new_v2
+      return old_v2(*args, **kwargs)
+    File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\wandb\integration\keras\keras.py", line 174, in new_v2
+      return old_v2(*args, **kwargs)
+    File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\keras\utils\traceback_utils.py", line 65, in error_handler
+      return fn(*args, **kwargs)
+    File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\keras\engine\training.py", line 1564, in fit
+      tmp_logs = self.train_function(iterator)
+    File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\keras\engine\training.py", line 1160, in train_function
+      return step_function(self, iterator)
+    File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\keras\engine\training.py", line 1146, in step_function
+      outputs = model.distribute_strategy.run(run_step, args=(data,))
+    File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\keras\engine\training.py", line 1135, in run_step
+      outputs = model.train_step(data)
+    File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\keras\engine\training.py", line 993, in train_step
+      y_pred = self(x, training=True)
+    File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\keras\utils\traceback_utils.py", line 65, in error_handler
+      return fn(*args, **kwargs)
+    File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\keras\engine\training.py", line 557, in __call__
+      return super().__call__(*args, **kwargs)
+    File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\keras\utils\traceback_utils.py", line 65, in error_handler
+      return fn(*args, **kwargs)
+    File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\keras\engine\base_layer.py", line 1097, in __call__
+      outputs = call_fn(inputs, *args, **kwargs)
+    File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\keras\utils\traceback_utils.py", line 96, in error_handler
+      return fn(*args, **kwargs)
+    File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\keras\engine\functional.py", line 510, in call
+      return self._run_internal_graph(inputs, training=training, mask=mask)
+    File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\keras\engine\functional.py", line 667, in _run_internal_graph
+      outputs = node.layer(*args, **kwargs)
+    File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\keras\utils\traceback_utils.py", line 65, in error_handler
+      return fn(*args, **kwargs)
+    File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\keras\engine\base_layer.py", line 1097, in __call__
+      outputs = call_fn(inputs, *args, **kwargs)
+    File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\keras\utils\traceback_utils.py", line 96, in error_handler
+      return fn(*args, **kwargs)
+    File "C:\Users\ADMIN\AppData\Local\Programs\Python\Python310\lib\site-packages\keras\layers\reshaping\reshape.py", line 137, in call
+      result = tf.reshape(inputs, (tf.shape(inputs)[0],) + self.target_shape)
+Node: 'handwritting_rec_model/reshape/Reshape'
+Input to reshape is a tensor with 262144 values, but the requested shape has 8192
+	 [[{{node handwritting_rec_model/reshape/Reshape}}]] [Op:__inference_train_function_20815]

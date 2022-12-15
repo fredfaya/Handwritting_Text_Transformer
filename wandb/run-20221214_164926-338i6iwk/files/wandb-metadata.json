@@ -1,0 +1,16 @@
+{
+    "os": "Windows-10-10.0.19045-SP0",
+    "python": "3.10.4",
+    "heartbeatAt": "2022-12-14T15:49:27.831421",
+    "startedAt": "2022-12-14T15:49:26.263215",
+    "docker": null,
+    "cpu_count": 4,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "D:\\Documents\\perso\\ML\\pythonProject\\model_training.py",
+    "codePath": "model_training.py",
+    "host": "DESKTOP-P2MFSJO",
+    "username": "ADMIN",
+    "executable": "D:\\Documents\\perso\\ML\\pythonProject\\venv\\Scripts\\python.exe"
+}

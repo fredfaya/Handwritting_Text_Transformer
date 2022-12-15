@@ -1,0 +1,47 @@
+2022-12-15 00:32:59,738 INFO    StreamThr :7460 [internal.py:wandb_internal():88] W&B internal server running at pid: 7460, started at: 2022-12-15 00:32:59.738914
+2022-12-15 00:32:59,741 DEBUG   HandlerThread:7460 [handler.py:handle_request():138] handle_request: status
+2022-12-15 00:32:59,745 DEBUG   SenderThread:7460 [sender.py:send_request():317] send_request: status
+2022-12-15 00:32:59,750 DEBUG   SenderThread:7460 [sender.py:send():303] send: header
+2022-12-15 00:32:59,750 INFO    WriterThread:7460 [datastore.py:open_for_write():75] open: D:\Documents\perso\ML\pythonProject\wandb\run-20221215_003259-2zdvjjg2\run-2zdvjjg2.wandb
+2022-12-15 00:32:59,751 DEBUG   SenderThread:7460 [sender.py:send():303] send: run
+2022-12-15 00:32:59,755 DEBUG   SenderThread:7460 [git.py:repo():40] git repository is invalid
+2022-12-15 00:33:00,491 DEBUG   HandlerThread:7460 [handler.py:handle_request():138] handle_request: check_version
+2022-12-15 00:33:00,507 INFO    SenderThread:7460 [dir_watcher.py:__init__():216] watching files in: D:\Documents\perso\ML\pythonProject\wandb\run-20221215_003259-2zdvjjg2\files
+2022-12-15 00:33:00,507 INFO    SenderThread:7460 [sender.py:_start_run_threads():928] run started: 2zdvjjg2 with start time 1671060779.730715
+2022-12-15 00:33:00,508 DEBUG   SenderThread:7460 [sender.py:send():303] send: summary
+2022-12-15 00:33:00,511 INFO    SenderThread:7460 [sender.py:_save_file():1171] saving file wandb-summary.json with policy end
+2022-12-15 00:33:00,512 DEBUG   SenderThread:7460 [sender.py:send_request():317] send_request: check_version
+2022-12-15 00:33:00,864 DEBUG   HandlerThread:7460 [handler.py:handle_request():138] handle_request: run_start
+2022-12-15 00:33:00,884 DEBUG   HandlerThread:7460 [meta.py:__init__():34] meta init
+2022-12-15 00:33:00,885 DEBUG   HandlerThread:7460 [meta.py:__init__():49] meta init done
+2022-12-15 00:33:00,885 DEBUG   HandlerThread:7460 [meta.py:probe():215] probe
+2022-12-15 00:33:00,891 DEBUG   HandlerThread:7460 [git.py:repo():40] git repository is invalid
+2022-12-15 00:33:00,891 DEBUG   HandlerThread:7460 [meta.py:_save_pip():53] save pip
+2022-12-15 00:33:00,891 DEBUG   HandlerThread:7460 [meta.py:_save_pip():67] save pip done
+2022-12-15 00:33:00,892 DEBUG   HandlerThread:7460 [meta.py:probe():253] probe done
+2022-12-15 00:33:01,003 DEBUG   SenderThread:7460 [sender.py:send():303] send: files
+2022-12-15 00:33:01,004 INFO    SenderThread:7460 [sender.py:_save_file():1171] saving file wandb-metadata.json with policy now
+2022-12-15 00:33:01,020 DEBUG   HandlerThread:7460 [handler.py:handle_request():138] handle_request: stop_status
+2022-12-15 00:33:01,021 DEBUG   SenderThread:7460 [sender.py:send_request():317] send_request: stop_status
+2022-12-15 00:33:01,026 DEBUG   HandlerThread:7460 [handler.py:handle_request():138] handle_request: get_summary
+2022-12-15 00:33:01,390 DEBUG   SenderThread:7460 [sender.py:send():303] send: telemetry
+2022-12-15 00:33:01,390 DEBUG   SenderThread:7460 [sender.py:send():303] send: telemetry
+2022-12-15 00:33:01,390 DEBUG   SenderThread:7460 [sender.py:send():303] send: telemetry
+2022-12-15 00:33:01,391 DEBUG   SenderThread:7460 [sender.py:send():303] send: files
+2022-12-15 00:33:01,391 INFO    SenderThread:7460 [sender.py:_save_file():1171] saving file model-best.h5 with policy live
+2022-12-15 00:33:01,393 DEBUG   SenderThread:7460 [sender.py:send():303] send: telemetry
+2022-12-15 00:33:01,526 INFO    Thread-17 :7460 [dir_watcher.py:_on_file_created():275] file/dir created: D:\Documents\perso\ML\pythonProject\wandb\run-20221215_003259-2zdvjjg2\files\output.log
+2022-12-15 00:33:01,526 INFO    Thread-17 :7460 [dir_watcher.py:_on_file_created():275] file/dir created: D:\Documents\perso\ML\pythonProject\wandb\run-20221215_003259-2zdvjjg2\files\wandb-metadata.json
+2022-12-15 00:33:01,527 INFO    Thread-17 :7460 [dir_watcher.py:_on_file_created():275] file/dir created: D:\Documents\perso\ML\pythonProject\wandb\run-20221215_003259-2zdvjjg2\files\wandb-summary.json
+2022-12-15 00:33:01,527 INFO    Thread-17 :7460 [dir_watcher.py:_on_file_created():275] file/dir created: D:\Documents\perso\ML\pythonProject\wandb\run-20221215_003259-2zdvjjg2\files\requirements.txt
+2022-12-15 00:33:02,318 INFO    Thread-21 :7460 [upload_job.py:push():143] Uploaded file C:\Users\ADMIN\AppData\Local\Temp\tmph3s0hggbwandb\1lf9mqha-wandb-metadata.json
+2022-12-15 00:33:03,552 INFO    Thread-17 :7460 [dir_watcher.py:_on_file_modified():292] file/dir modified: D:\Documents\perso\ML\pythonProject\wandb\run-20221215_003259-2zdvjjg2\files\output.log
+2022-12-15 00:33:16,498 DEBUG   HandlerThread:7460 [handler.py:handle_request():138] handle_request: stop_status
+2022-12-15 00:33:16,499 DEBUG   SenderThread:7460 [sender.py:send_request():317] send_request: stop_status
+2022-12-15 00:33:24,949 INFO    Thread-17 :7460 [dir_watcher.py:_on_file_modified():292] file/dir modified: D:\Documents\perso\ML\pythonProject\wandb\run-20221215_003259-2zdvjjg2\files\output.log
+2022-12-15 00:33:31,007 INFO    Thread-17 :7460 [dir_watcher.py:_on_file_modified():292] file/dir modified: D:\Documents\perso\ML\pythonProject\wandb\run-20221215_003259-2zdvjjg2\files\config.yaml
+2022-12-15 00:33:31,899 DEBUG   HandlerThread:7460 [handler.py:handle_request():138] handle_request: stop_status
+2022-12-15 00:33:31,900 DEBUG   SenderThread:7460 [sender.py:send_request():317] send_request: stop_status
+2022-12-15 00:33:32,297 DEBUG   SenderThread:7460 [sender.py:send():303] send: stats
+2022-12-15 00:33:53,529 INFO    MainThread:7460 [internal.py:handle_exit():78] Internal process exited
+2022-12-15 00:33:53,529 WARNING MsgRouterThr:7460 [router.py:message_loop():74] EOFError seen in message_loop
